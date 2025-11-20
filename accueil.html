@@ -1,0 +1,130 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Vazirmatn:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Flow Garden</title>
+ </head>
+ <body>
+  <nav>
+    <div class="nav-container">
+        <div class="logo">
+            <span class="logo-icon"></span>
+            <span class="logo-text">Flow Garden</span>
+        </div>
+        <div class="nav-links">
+<button class="nav-btn active" data-page="accueil">Accueil</button>
+<button class="nav-btn" data-page="timer">Timer</button>
+<button class="nav-btn" data-page="todo">To Do List</button>
+<button class="nav-btn" data-page="jardin">Jardin</button>
+
+           
+        </div>
+    </div>
+</nav>
+<div id="accueil" class="page-active">
+  <div class="accueil-content">
+    <h1>Chaque moment de focus </h1>
+    <h2>fait fleurir ton univers.</h2>
+    <p class="subtitle">Flow Garden rend la concentration plus douce, plus visuelle, plus inspirante </p>
+    <button class="btn-primary" onclick="changePage('timer')">Apprivoiser le temps</button>
+  </div>
+</div>
+
+    <div id="timer" class="page">
+        <div class="timer-content">
+            <div class="timer-header">
+                <h1>⏱️ Temps Suspendu</h1>
+                <p class="timer-subtitle">Choisis ta durée de focus</p>
+            </div>
+
+        
+            <div class="duration-buttons">
+                <button class="duration-btn selected" data-duration="10">Court<br>(10 min)</button>
+                   <button class="duration-btn " data-duration="25">Moyen<br>(25 min)</button>
+               <button class="duration-btn " data-duration="35">Long<br>(35 min)</button>
+            </div>
+
+         
+            <div class="timer-display-container">
+                <span class="timer-decoration deco-1">🌙</span>
+                <div class="timer-circle" id="timerCircle">
+                    <div class="timer-display" id="timerDisplay">10:00</div>
+                </div>
+                <span class="timer-decoration deco-2">🪐</span>
+            </div>
+
+   
+    <div class="timer-controls">
+  <button class="control-btn btn-reset" id="resetBtn">Recommencer</button>
+  <button class="control-btn btn-start" id="startBtn">Commencer</button>
+  <button class="control-btn btn-pause" id="pauseBtn">Pause</button>
+</div>
+
+ <!--  <button class="control-btn btn-pause" id="pauseBtn" style="display: none;">Pause</button>
+</div> -->
+            <div class="timer-message" id="timerMessage">
+                🌹 Bravo ! Une nouvelle rose a fleuri dans ton jardin !
+            </div>
+        </div>
+    </div>
+
+ 
+   
+    <div id="todo" class="page">
+        <div class="todo-content">
+            
+            <div class="todo-header">
+                <div class="todo-icon">🪐</div>
+                <h1>Sur mon astéroïde aujourd'hui :</h1>
+                <p class="todo-subtitle">Les choses à faire...</p>
+            </div>
+
+           
+            <div class="todo-input-section">
+                <label class="todo-input-label">✨ Ajouter une nouvelle tâche</label>
+                <div class="todo-input-container">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        class="todo-input" 
+                        placeholder="Ex: Faire mes devoirs, Promener le poisson..."
+                    >
+                   <button class="btn-add" id="addTodoBtn">Ajouter</button>
+                </div>
+            </div>
+
+            
+            <ul id="todoList" class="todo-list">
+               
+            </ul>
+
+           
+            <div id="todoEmpty" class="todo-empty">
+                <div class="todo-empty-icon">🌙</div>
+                <p>Aucune tâche pour le moment.<br>Commence par en ajouter une !</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="jardin" class="page">
+        <div class="temp-content">
+            <h1>🌱 La planète du Petit Jardinier</h1>
+            <p>Page Jardin </p>
+        </div>
+    </div>
+
+     </script>
+  </body>
+</html>
