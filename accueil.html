@@ -20,7 +20,7 @@
   <nav>
     <div class="nav-container">
         <div class="logo">
-            <span class="logo-icon"></span>
+            <img src="images/Component 1.png" alt="logo Flow Garden" class="logo-img">
             <span class="logo-text">Flow Garden</span>
         </div>
         <div class="nav-links">
@@ -35,6 +35,7 @@
 </nav>
 <div id="accueil" class="page-active">
   <div class="accueil-content">
+  
     <h1>Chaque moment de focus </h1>
     <h2>fait fleurir ton univers.</h2>
     <p class="subtitle">Flow Garden rend la concentration plus douce, plus visuelle, plus inspirante </p>
@@ -45,7 +46,9 @@
     <div id="timer" class="page">
         <div class="timer-content">
             <div class="timer-header">
+                 
                 <h1>⏱️ Temps Suspendu</h1>
+                <img src="images/moon-space-outer 1.png" alt="Astéroïde du timer" class="timer-asteroid">
                 <p class="timer-subtitle">Choisis ta durée de focus</p>
             </div>
 
@@ -67,7 +70,7 @@
 
    
     <div class="timer-controls">
-  <button class="control-btn btn-reset" id="resetBtn">Recommencer</button>
+  <button class="control-btn btn-reset" onclick="resetTimer()">Recommencer</button>
   <button class="control-btn btn-start" id="startBtn">Commencer</button>
   <button class="control-btn btn-pause" id="pauseBtn">Pause</button>
 </div>
@@ -100,6 +103,7 @@
                         id="todoInput" 
                         class="todo-input" 
                         placeholder="Ex: Faire mes devoirs, Promener le poisson..."
+                        onkeypress="if(eventkey ==='Ente') addTodo()"
                     >
                    <button class="btn-add" id="addTodoBtn">Ajouter</button>
                 </div>
@@ -119,11 +123,19 @@
     </div>
 
     <div id="jardin" class="page">
-        <div class="temp-content">
+        <div class="jardin-content">
             <h1>🌱 La planète du Petit Jardinier</h1>
-            <p>Page Jardin </p>
+            <p class="jardin-subtitle">Chaque session de focus fait pousser une rose 
         </div>
-    </div>
+        <div id="roseContainer" class="rose-container">
+
+        </div>
+    
+        <div id="jardinEmpty" class="jardin-empty">
+            <div class="jardin-empty-icon">🌟</div>
+            <p>Ton Jardin est encore vide ... <br>Complète une session de focus pour voire ta première rose pousser !</p>
+        <button class="btn-start-timer" onclick="goToTimer()">Commencer une session</button>
+        </div>
 
      </script>
   </body>
