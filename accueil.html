@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script  defer src="script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -15,128 +15,113 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Flow Garden</title>
- </head>
- <body>
+</head>
+<body>
+ 
+  <div class="background-svg accueil-bg"></div>
   <nav>
     <div class="nav-container">
-        <div class="logo">
-            <img src="images/Component 1.png" alt="logo Flow Garden" class="logo-img">
-            <span class="logo-text">Flow Garden</span>
-        </div>
-        <div class="nav-links">
-<button class="nav-btn active" data-page="accueil">Accueil</button>
-<button class="nav-btn" data-page="timer">Timer</button>
-<button class="nav-btn" data-page="todo">To Do List</button>
-<button class="nav-btn" data-page="jardin">Jardin</button>
-
-           
-        </div>
+      <div class="logo">
+        <img src="images/Component 1.png" alt="logo Flow Garden" class="logo-img">
+        <span class="logo-text">Flow Garden</span>
+      </div>
+      <div class="nav-links">
+      
+        <button class="nav-btn active" data-page="accueil">Accueil</button>
+        <button class="nav-btn" data-page="timer">Timer</button>
+        <button class="nav-btn" data-page="todo">To Do List</button>
+        <button class="nav-btn" data-page="jardin">Jardin</button>
+      </div>
     </div>
-</nav>
-<div id="accueil" class="page-active">
-  <div class="accueil-content">
-  
-    <h1>Chaque moment de focus </h1>
-    <h2>fait fleurir ton univers.</h2>
-    <p class="subtitle">Flow Garden rend la concentration plus douce, plus visuelle, plus inspirante </p>
-    <button class="btn-primary" onclick="changePage('timer')">Apprivoiser le temps</button>
-  </div>
-</div>
+  </nav>
 
-    <div id="timer" class="page">
-        <div class="timer-content">
-            <div class="timer-header">
-                 
-                <h1>⏱️ Temps Suspendu</h1>
-                <img src="images/moon-space-outer 1.png" alt="Astéroïde du timer" class="timer-asteroid">
-                <p class="timer-subtitle">Choisis ta durée de focus</p>
-            </div>
 
-        
-            <div class="duration-buttons">
-                <button class="duration-btn selected" data-duration="10">Court<br>(10 min)</button>
-                   <button class="duration-btn " data-duration="25">Moyen<br>(25 min)</button>
-               <button class="duration-btn " data-duration="35">Long<br>(35 min)</button>
-            </div>
-
-         
-            <div class="timer-display-container">
-                <span class="timer-decoration deco-1">🌙</span>
-                <div class="timer-circle" id="timerCircle">
-                    <div class="timer-display" id="timerDisplay">10:00</div>
-                </div>
-                <span class="timer-decoration deco-2">🪐</span>
-            </div>
-
-   
-    <div class="timer-controls">
-  <button class="control-btn btn-reset" onclick="resetTimer()">Recommencer</button>
-  <button class="control-btn btn-start" id="startBtn">Commencer</button>
-  <button class="control-btn btn-pause" id="pauseBtn">Pause</button>
-</div>
-
- <!--  <button class="control-btn btn-pause" id="pauseBtn" style="display: none;">Pause</button>
-</div> -->
-            <div class="timer-message" id="timerMessage">
-                🌹 Bravo ! Une nouvelle rose a fleuri dans ton jardin !
-            </div>
-        </div>
+  <section id="accueil" class="page">
+    <div class="accueil-content">
+      <h1>Chaque moment de focus </h1>
+      <h2>fait fleurir ton univers.</h2>
+      <p class="welcome">
+        <img src="images/icons8-enfant-avec-renard-64.png"alt="le petit prince icon" class="welcome-prince">
+  Bienvenue sur Flow Garden. Ici,les petites choses deviennent importantes….<br>
+  Trouve ton rythme, organise ta journée, et fais fleurir des petites victoires.
+</p>
+      <p class="subtitle">Flow Garden rend la concentration plus douce, plus visuelle, plus inspirante</p>
+      <button class="btn-primary btn-important" data-action="timer">Le temps apprivoisé</button>
     </div>
+  </section>
 
  
-   
-    <div id="todo" class="page">
-        <div class="todo-content">
-            
-            <div class="todo-header">
-                <div class="todo-icon">🪐</div>
-                <h1>Sur mon astéroïde aujourd'hui :</h1>
-                <p class="todo-subtitle">Les choses à faire...</p>
-            </div>
+  <section id="timer" class="page">
 
-           
-            <div class="todo-input-section">
-                <label class="todo-input-label">✨ Ajouter une nouvelle tâche</label>
-                <div class="todo-input-container">
-                    <input 
-                        type="text" 
-                        id="todoInput" 
-                        class="todo-input" 
-                        placeholder="Ex: Faire mes devoirs, Promener le poisson..."
-                        onkeypress="if(eventkey ==='Ente') addTodo()"
-                    >
-                   <button class="btn-add" id="addTodoBtn">Ajouter</button>
-                </div>
-            </div>
+    <div class="background-svg timer-bg"></div>
+    <div class="timer-content">
+        <div class="timer-header">
+         
+  <h1><img src="images/icons8-temps-64.png" alt="horloge" class="icon-btn">Le temps apprivoisé</h1>
+  <p> Sur l’astéroïde B-612, chaque session devient une rose.</p>
+  <p class="timer-subtitle">Choisis ta durée de focus</p>
+</div>
 
-            
-            <ul id="todoList" class="todo-list">
-               
-            </ul>
+<div class="duration-buttons">
+  <button class="duration-btn" data-duration="10">Court<br>(10 min)</button>
+  <button class="duration-btn" data-duration="25">Moyen<br>(25 min)</button>
+  <button class="duration-btn" data-duration="35">Long<br>(35 min)</button>
+</div>
 
-           
-            <div id="todoEmpty" class="todo-empty">
-                <div class="todo-empty-icon">🌙</div>
-                <p>Aucune tâche pour le moment.<br>Commence par en ajouter une !</p>
-            </div>
-        </div>
+<div class="timer-asteroid-container">
+  <img src="images/moon-space-outer 1.png" alt="Astéroïde du timer" class="timer-asteroid">
+  <div class="timer-display-on-asteroid" id="timerDisplay">10:00</div>
+</div>
+
+
+      <div class="timer-controls">
+        <button class="control-btn btn-reset" data-action="reset">Recommencer</button>
+        <button class=" btn-important" id="startBtn" data-action="start"><img src="images/icons8-commencer-64.png" alt="" class="icon-btn">Commencer</button>
+        <button class=" btn-important" id="pauseBtn" data-action="pause">Pause</button>
+      </div>
+      <div class="timer-message" id="timerMessage">
+        🌹 Bravo ! Une nouvelle rose a fleuri dans ton jardin !
+      </div>
     </div>
+  </section>
 
-    <div id="jardin" class="page">
-        <div class="jardin-content">
-            <h1>🌱 La planète du Petit Jardinier</h1>
-            <p class="jardin-subtitle">Chaque session de focus fait pousser une rose 
+  <!-- TODO LIST -->
+  <section id="todo" class="page">
+    <div class="todo-content">
+      <div class="todo-header">
+        <div class="todo-icon"><img src="images/icons8-rappels-100.png" alt="" class="icon-btn"></div>
+        <h1>Le carnet du petit explorateur :</h1>
+        <p class="todo-subtitle">Les choses à faire...</p>
+      </div>
+      <div class="todo-input-section">
+        <label class="todo-input-label">⋆⭒˚.⋆✨⋆⭒˚.⋆Ajouter une nouvelle tâche</label>
+        <div class="todo-input-container">
+          <input type="text" id="todoInput" class="todo-input" placeholder="Ex: Faire mes devoirs, Promener le poisson...">
+          <button class="btn-add" id="addTodoBtn" data-action="add">Ajouter</button>
         </div>
-        <div id="roseContainer" class="rose-container">
+      </div>
+      <ul id="todoList" class="todo-list"></ul>
+      <div id="todoEmpty" class="todo-empty">
+        <div class="todo-empty-icon">˚.⋆🌙⋆⭒˚</div>
+        <p>Aucune tâche pour le moment.<br>Commence par en ajouter une !</p>
+      </div>
+    </div>
+  </section>
 
-        </div>
-    
-        <div id="jardinEmpty" class="jardin-empty">
-            <div class="jardin-empty-icon">🌟</div>
-            <p>Ton Jardin est encore vide ... <br>Complète une session de focus pour voire ta première rose pousser !</p>
-        <button class="btn-start-timer" onclick="goToTimer()">Commencer une session</button>
-        </div>
-
-     </script>
-  </body>
+ 
+  <section id="jardin" class="page">
+    <div class="jardin-content">
+      <h1><img src="images/icons8-jardin-64.png" alt="fleurs" class="icon-btn">La planète du Petit Jardinier</h1>
+      <p class="jardin-subtitle">Chaque session de focus fait pousser une rose</p>
+      <div id="roseContainer" class="rose-container">
+     
+      </div>
+      <div id="jardinEmpty" class="jardin-empty">
+        <div class="jardin-empty-icon">˚.⋆🌟⋆⭒˚</div>
+        <p>Ton Jardin est encore vide ... <br>Complète une session de focus pour voir ta première rose pousser !</p>
+        <button class="btn-start-timer" data-action="timer">Commencer une session</button>
+      </div>
+    </div>
+  </section>
+</body>
 </html>
