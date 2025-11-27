@@ -93,3 +93,50 @@ resetBtn.addEventListener('click', resetTimer);
 updateTimerUI();
 document.getElementById('timerMessage').style.display = 'none';
 
+
+
+let todos = JSON.parse(localStorage.getItem('todos')) || []
+const todoInput = document.getElementById('todoInput')
+const addTodoBtn = document.getElementById('addTodoBtn')
+const todoList = document.getElementById('todoList')
+const todoEmpty = document.getElementById('todoEmpty')
+
+function updateTodoUI() {
+  todoList.innerHTML = ''
+  if (todos.length === 0) {
+    todoEmpty.style.display = 'block'
+  } else {
+    todoEmpty.style.display = 'none'
+    todos.forEach((todo, index) => {
+      const li = document.createElement('li')
+      li.textContent = todo
+      const delBtn = document.createElement('button')
+      delBtn.textContent = '✘'
+      delBtn.className = 'btn-delete'
+      delBtn.addEventListener('click', () => removeTodo(index));
+      li.appendChild(delBtn);
+      todoList.appendChild(li);
+    });
+  }
+}
+function addTodo() {
+  const task = todoInput.value.trim()
+  if (task) {
+    todos.push(task)
+    localStorage.setItem('todos', JSON.stringify(todos))
+    todoInput.value = ''
+    updateTodoUI()
+  }
+}
+
+function removeTodo(index) {
+  todos.splice(index, 1)
+  localStorage.setItem('todos', JSON.stringify(todos))
+  updateTodoUI()
+}
+
+addTodoBtn.addEventListener('click', addTodo);
+todoInput.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') addTodo()
+})
+updateTodoUI();
