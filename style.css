@@ -240,6 +240,7 @@ h1, h2 {
   letter-spacing: 1px;
   transform: scale(1.05);
   transition: background .22s, color .16s, transform .16s;
+  cursor: pointer;
 }
 
 .btn-important:hover,
@@ -447,9 +448,13 @@ h1, h2 {
 }
 
 .btn-delete {
-  color: var(--blue);          
+  color: var(--yellow-doré);          
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.1em;    
 }
+
+
+/* https://dev.to/devcorner/how-to-fetch-api-using-axios-in-javascript-with-code-examples-369c
+https://www.youtube.com/watch?v=ubw2hdQIl4E /*

@@ -61,6 +61,7 @@ function startTimer(){
   updateTimerUI();  
     }else{
         stopTimer()
+        addRose()
         document.getElementById('timerMessage').style.display='block';
     }
 },1000);
@@ -74,6 +75,7 @@ function stopTimer() {
 
 function pauseTimer() {
   stopTimer();
+
 }
 
 
@@ -135,8 +137,66 @@ function removeTodo(index) {
   updateTodoUI()
 }
 
-addTodoBtn.addEventListener('click', addTodo);
+addTodoBtn.addEventListener('click', addTodo)
 todoInput.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') addTodo()
 })
-updateTodoUI();
+updateTodoUI()
+
+
+
+
+ let flowerList = []
+ let roses = Number (localStorage.getItem('roses')) || 0 ;
+
+
+ const roseContainer = document.getElementById('roseContainer')
+ const jardinEmpty=document.getElementById('jardinEmty')
+
+ async function loadFlower() {
+   try {
+     const response=await fetch('https://emojihub.yurace.pro/api/all/group/plant-flower');
+     const data=await response.json()
+     flowerList = data.map(item =>item.htmlCode[0])
+    console.log('Fleurs Chargées : ',flowerList.length)
+   }catch (error){
+    console.error('Erreur chargement fleurs',error)
+    flowerList=['🌹','🌻','🪻','🌼','🌷']
+   }
+
+ }
+ function getRandomFlower(){
+  if (flowerList.length === 0){
+    return '🌹'
+  }
+  const randomIndex=Math.floor(Math.random()*flowerList.length)
+  return flowerList[randomIndex]
+ }
+  function addRose(){
+    roses++
+    const flower=getRandomFlower()
+    let emojiList=JSON.parse(localStorage.getItem('emojiList')) || []
+    emojiList.push(flower)
+    localStorage.setItem('emojiList', JSON.stringify(emojiList));
+    localStorage.setItem('roses', roses);
+    updateGardenUI();
+  }  
+  function updateGardenUI() {
+    roseContainer.innerHTML = '';
+    const emojiList = JSON.parse(localStorage.getItem('emojiList')) || [];
+
+    if (emojiList.length === 0) {
+      jardinEmpty.style.display = 'block';
+    } else {
+      jardinEmpty.style.display = 'none';
+  
+      emojiList.forEach((flower) => {
+        const span = document.createElement('span');
+        span.innerHTML = flower;       
+        span.className = 'rose-item';   
+        roseContainer.appendChild(span);
+      });
+    }
+  }
+loadFlowers()
+updateGardenUI()
