@@ -11,6 +11,21 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.classList.add('active');
   });
 });
+const burgerBtn = document.querySelector('.burger-btn');
+const navLinks = document.querySelector('.nav-links');
+if (burgerBtn && navLinks) {
+  burgerBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+}
+
 
 const apprivoiserBtn = document.querySelector('[data-action="timer"]');
 
@@ -27,6 +42,7 @@ apprivoiserBtn.addEventListener('click', function() {
 let timerDuration= 10*60;
 let timerRemaining=timerDuration;
 let timerInterval=null;
+let timerActive = false
 
 
 const timerDisplay=document.getElementById('timerDisplay');
@@ -142,6 +158,8 @@ todoInput.addEventListener('keypress', function (e) {
   if (e.key === 'Enter') addTodo()
 })
 updateTodoUI()
+updateMiniTodoUI();
+
 
 
 
@@ -151,9 +169,10 @@ updateTodoUI()
 
 
  const roseContainer = document.getElementById('roseContainer')
- const jardinEmpty=document.getElementById('jardinEmty')
+const jardinEmpty = document.getElementById('jardinEmpty');
 
- async function loadFlower() {
+
+ async function loadFlowers() {
    try {
      const response=await fetch('https://emojihub.yurace.pro/api/all/group/plant-flower');
      const data=await response.json()
@@ -180,7 +199,9 @@ updateTodoUI()
     localStorage.setItem('emojiList', JSON.stringify(emojiList));
     localStorage.setItem('roses', roses);
     updateGardenUI();
-  }  
+    updateMiniGardenUI();
+}
+  
   function updateGardenUI() {
     roseContainer.innerHTML = '';
     const emojiList = JSON.parse(localStorage.getItem('emojiList')) || [];
@@ -200,3 +221,46 @@ updateTodoUI()
   }
 loadFlowers()
 updateGardenUI()
+updateMiniGardenUI();
+
+
+
+function updateMiniTodoUI() {
+  const mini = document.getElementById('miniTodoList');
+  if (!mini) return;
+  mini.innerHTML = '';
+
+  if (todos.length === 0) {
+    const li = document.createElement('li');
+    li.textContent = 'Ajoute une tâche à ton astéroïde B‑612…';
+    mini.appendChild(li);
+  } else {
+    todos.slice(0, 3).forEach(todo => {
+      const li = document.createElement('li');
+      li.textContent = todo;
+      mini.appendChild(li);
+    });
+  }
+}
+
+function updateMiniGardenUI() {
+  const mini = document.getElementById('miniRoseContainer');
+  if (!mini) return;
+  mini.innerHTML = '';
+
+  const emojiList = JSON.parse(localStorage.getItem('emojiList')) || [];
+
+  if (emojiList.length === 0) {
+    mini.textContent = 'Ton jardin est planté, il attend juste un peu de temps pour fleurir';
+  } else {
+    emojiList.slice(0, 6).forEach(flower => {
+      const span = document.createElement('span');
+      span.innerHTML = flower;
+      span.className = 'rose-item';
+      mini.appendChild(span);
+    });
+  }
+}
+loadFlowers();      
+updateGardenUI();   
+updateMiniTodoUI()

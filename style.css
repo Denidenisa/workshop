@@ -332,6 +332,7 @@ h1, h2 {
   border-radius: 18px;
   padding: 34px 25px;
   box-shadow: var(--shadow);
+  position: relative;
 }
 
 .todo-header {
@@ -454,6 +455,130 @@ h1, h2 {
   cursor: pointer;
   font-size: 1.1em;    
 }
+
+
+.timer-mini-panels {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;         
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.mini-todo,
+.mini-garden {
+  flex: 1 1 40%;            
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 8px 10px;       
+  box-shadow: var(--shadow);
+  font-size: 0.8em;
+  text-align: left;
+}
+
+
+.mini-todo {
+  position: relative;
+  background: #FFF9C4;     
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  
+}
+
+.mini-todo::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 10px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.mini-todo h3,
+.mini-garden h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 0.9em;
+  color: var(--grey-charbon);
+}
+
+#miniTodoList {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0 0;
+}
+#jardin {
+  background-color:rgb(192, 221, 192);;
+}
+
+#miniRoseContainer .rose-item {
+  font-size: 1.1em;
+  margin: 2px;
+  
+}
+#miniRoseContainer {
+  background-color: rgb(192, 221, 192);
+}
+@media (max-width: 600px) {
+  .timer-mini-panels {
+    display: none;  
+  }
+}
+
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 20px;
+  margin-bottom: 8px;  
+}
+
+
+
+.burger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8em;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--navbar);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;          
+  }
+
+  .nav-links.open {
+    display: flex;          
+  }
+
+  .burger-btn {
+    display: block;          
+  }
+
+  .nav-container {
+    position: relative;      
+  }
+}
+
+
+
+
 
 
 /* https://dev.to/devcorner/how-to-fetch-api-using-axios-in-javascript-with-code-examples-369c
