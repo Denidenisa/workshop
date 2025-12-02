@@ -18,11 +18,34 @@ if (burgerBtn && navLinks) {
     navLinks.classList.toggle('open');
   });
 
+const logoImg = document.querySelector('.logo-img');
+const aboutMeHeader = document.getElementById('aboutMeHeader');
+
+if (logoImg && aboutMeHeader) {
+  logoImg.style.cursor = 'pointer';
+
+  logoImg.addEventListener('click', () => {
+    const isVisible = aboutMeHeader.style.display === 'block';
+    aboutMeHeader.style.display = isVisible ? 'none' : 'block';
+  });
+}
+
 
   document.querySelectorAll('.nav-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       navLinks.classList.remove('open');
     });
+  });
+}
+const princeImg = document.querySelector('.welcome-prince');
+const siteExplanation = document.getElementById('siteExplanation');
+
+if (princeImg && siteExplanation) {
+  princeImg.style.cursor = 'pointer';
+
+  princeImg.addEventListener('click', () => {
+    const isVisible = siteExplanation.style.display === 'block';
+    siteExplanation.style.display = isVisible ? 'none' : 'block';
   });
 }
 
@@ -69,8 +92,11 @@ durationButtons.forEach(btn => {
 });
 
 function startTimer(){
-    if (timerActive) return;
-    timerActive=true;
+  const msg = document.getElementById('timerMessage');
+  if (msg) msg.style.display = 'none';
+
+  if (timerActive) return;
+  timerActive = true;
     timerInterval =setInterval(()=>{
     if (timerRemaining > 0) {
   timerRemaining--;
@@ -91,15 +117,26 @@ function stopTimer() {
 
 function pauseTimer() {
   stopTimer();
+  const msg = document.getElementById('timerMessage');
+  if (!msg) return;
 
+  msg.style.display = 'block';
+  msg.textContent = "🌙 Pause méritée. Ton jardin t’attend quand tu seras prêt à reprendre.";
 }
+
+
 
 
 function resetTimer() {
   stopTimer();
   timerRemaining = timerDuration;
   updateTimerUI();
-  document.getElementById('timerMessage').style.display = 'none';
+  const msg = document.getElementById('timerMessage');
+  if (msg) {
+    msg.style.display = 'block';
+    msg.textContent = "🌱 Parfois, repartir de zéro permet à de nouvelles fleurs de s’épanouir !";
+  }
+
 }
 
 
@@ -129,7 +166,7 @@ function updateTodoUI() {
       const li = document.createElement('li')
       li.textContent = todo
       const delBtn = document.createElement('button')
-      delBtn.textContent = '✘'
+      delBtn.textContent = '✔'
       delBtn.className = 'btn-delete'
       delBtn.addEventListener('click', () => removeTodo(index));
       li.appendChild(delBtn);
@@ -159,9 +196,6 @@ todoInput.addEventListener('keypress', function (e) {
 })
 updateTodoUI()
 updateMiniTodoUI();
-
-
-
 
 
  let flowerList = []

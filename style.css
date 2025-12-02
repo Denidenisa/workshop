@@ -24,8 +24,6 @@
   --nav-logo-text :"Lobster Two", sans-serif;
 }
 
-
-
 body {
   background: var(--main-bg);
   font-family: var(--primary-font);
@@ -69,7 +67,7 @@ nav {
 
 .logo-img {
   width: 40px;
-   height: 40px;
+  height: 40px;
   margin-right: 10px;
 }
 
@@ -145,7 +143,6 @@ h1, h2 {
   margin-top: 0.6em;
   margin-bottom: 0.2em;
 }
-
 
 .welcome{
   font-size: 1.3em;
@@ -257,8 +254,6 @@ h1, h2 {
   margin-right: 8px; 
   vertical-align: middle;
 }
-
-
 .timer-display-container {
   display: flex;
   align-items: center;
@@ -365,7 +360,7 @@ h1, h2 {
   padding: 10px 12px;
   font-size: 1em;
   border-radius: 8px;
-  border: 1px solid var(--yellow-sable-fonce);
+  border: 1px solid var(--blu--yellow-sable-fonce);
   background: var(--soft-gray);
 }
 
@@ -431,23 +426,6 @@ h1, h2 {
   margin-bottom: 7px;
 }
 
-.btn-start-timer {
-  background: var(--yellow-dore);
-  color: var(--blue);
-  border: none;
-  border-radius: 12px;
-  padding: 11px 28px;
-  cursor: pointer;
-  margin-top: 12px;
-  transition: background 0.18s;
-  font-weight: bold;
-}
-
-.btn-start-timer:hover,
-.btn-start-timer:focus {
-  background: var(--yellow-dore-hover);
-}
-
 .btn-delete {
   color: var(--yellow-doré);          
   background: none;
@@ -455,7 +433,6 @@ h1, h2 {
   cursor: pointer;
   font-size: 1.1em;    
 }
-
 
 .timer-mini-panels {
   display: flex;
@@ -476,12 +453,10 @@ h1, h2 {
   text-align: left;
 }
 
-
 .mini-todo {
   position: relative;
-  background: #FFF9C4;     
-  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
-  
+  background: #ebe4aac5;     
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12); 
 }
 
 .mini-todo::before {
@@ -492,7 +467,7 @@ h1, h2 {
   transform: translateX(-50%);
   width: 40px;
   height: 10px;
-  background: rgba(255,255,255,0.7);
+  background: rgba(196, 193, 193, 0.7);
   border-radius: 3px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
@@ -515,14 +490,14 @@ h1, h2 {
 }
 
 #miniRoseContainer .rose-item {
-  font-size: 1.1em;
+  font-size: 1.5em;
   margin: 2px;
   
 }
 #miniRoseContainer {
   background-color: rgb(192, 221, 192);
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .timer-mini-panels {
     display: none;  
   }
@@ -537,8 +512,6 @@ h1, h2 {
   margin-bottom: 8px;  
 }
 
-
-
 .burger-btn {
   display: none;
   background: none;
@@ -547,7 +520,6 @@ h1, h2 {
   color: var(--blue);
   cursor: pointer;
 }
-
 
 @media (max-width: 768px) {
   .nav-links {
@@ -576,9 +548,65 @@ h1, h2 {
   }
 }
 
+.site-footer {
+  text-align: center;
+  padding: 16px 12px 24px;
+  color: var(--grey-cl);
+  font-size: 0.9em;
+}
+
+.site-explanation {
+  max-width: 800px;
+  margin: 12px auto 20px auto;
+  padding: 12px 16px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-size: 0.95em;
+  color: var(--grey-charbon);
+  display: none; 
+}
+@media (max-width: 768px) {
+  .site-explanation {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--card-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 16px;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;          
+  }
+}
+
+.about-me-header {
+  max-width: 900px;
+  margin: 8px auto 0 auto;
+  padding: 10px 14px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-size: 0.9em;
+  color: var(--grey-charbon);
+  display: none; /
+}
 
 
-
+@media (max-width: 768px) {
+  .about-me-header {
+    top: 60px;
+ 
+    background: var(--card-bg);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 24px;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: none;          
+  }
+}
 
 
 /* https://dev.to/devcorner/how-to-fetch-api-using-axios-in-javascript-with-code-examples-369c

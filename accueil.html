@@ -22,12 +22,13 @@
   <nav>
     <div class="nav-container">
       <div class="logo">
-        <img src="images/Component 1.png" alt="logo Flow Garden" class="logo-img">
+        <img src="images/Component 1.png" alt="logo Flow Garden" class="logo-img"  title="Clique ici pour en savoir plus sur la créatrice de Flow Garden" >
         <span class="logo-text">Flow Garden</span>
       </div>
       <button class="burger-btn" aria-label="Ouvrir le menu">
-  ☰
+        ≣
 </button>
+
       <div class="nav-links">
       
         <button class="nav-btn active" data-page="accueil">Accueil</button>
@@ -37,18 +38,29 @@
       </div>
     </div>
   </nav>
-
-
+  <div id="aboutMeHeader" class="about-me-header">
+    Je m’appelle Furtuna Denisa. Flow Garden est né de l’envie d’aider surtout
+    les personnes neurodivergentes à apprivoiser leur temps en douceur. Plus tard,
+    j’aimerais en faire un outil plus complet et professionnel. L’univers du Petit
+    Prince m’inspire, parce que ses planètes et ses fleurs ressemblent aux petits
+    mondes qu’on porte en soi.
+  </div>
   <section id="accueil" class="page">
     <div class="accueil-content">
       <h1>Chaque moment de focus </h1>
       <h2>fait fleurir ton univers.</h2>
       <p class="welcome">
-        <img src="images/icons8-enfant-avec-renard-64.png"alt="le petit prince icon" class="welcome-prince">
+        <img src="images/icons8-enfant-avec-renard-64.png"alt="le petit prince icon" class="welcome-prince" title="Clique pour découvrir comment Flow Garden fonctionne"
+        >
   Bienvenue sur Flow Garden. Ici,les petites choses deviennent importantes….<br>
   Trouve ton rythme, organise ta journée, et fais fleurir des petites victoires.
 </p>
       <p class="subtitle">Flow Garden rend la concentration plus douce, plus visuelle, plus inspirante</p>
+      <div id="siteExplanation" class="site-explanation">
+        Flow Garden t’aide à apprivoiser ton temps : choisis une durée de focus,
+        note tes tâches, et regarde ton jardin fleurir à chaque petite victoire.
+      </div>
+      
       <button class="btn-primary btn-important" data-action="timer">Le temps apprivoisé</button>
     </div>
   </section>
@@ -88,19 +100,19 @@
       </div>
       <div class="timer-mini-panels">
   <div class="mini-todo">
-    <h3>Mini To Do</h3>
+    <h3>Liste de choses à apprivoiser</h3>
     <ul id="miniTodoList"></ul>
   </div>
 
   <div class="mini-garden">
-    <h3>Mini Jardin</h3>
+    <h3>Le jardinet</h3>
     <div id="miniRoseContainer"></div>
   </div>
 </div>
     </div>
   </section>
 
-  <!-- TODO LIST -->
+
   <section id="todo" class="page">
     <div class="todo-content">
       <div class="todo-header">
@@ -127,16 +139,19 @@
   <section id="jardin" class="page">
     <div class="jardin-content">
       <h1><img src="images/icons8-jardin-64.png" alt="fleurs" class="icon-btn">La planète du Petit Jardinier</h1>
-      <p class="jardin-subtitle">Chaque session de focus fait pousser une rose</p>
+      <p class="jardin-subtitle">Chaque session de focus fait pousser une fleur</p>
       <div id="roseContainer" class="rose-container">
      
       </div>
       <div id="jardinEmpty" class="jardin-empty">
         <div class="jardin-empty-icon">˚.⋆🌟⋆⭒˚</div>
-        <p>Ton Jardin est encore vide ... <br>Complète une session de focus pour voir ta première rose pousser !</p>
-        <button class="btn-start-timer" data-action="timer">Commencer une session</button>
+        <p>Ton Jardin est encore vide ... <br>Complète une session de focus pour voir ta première fleur pousser !</p>
+       
       </div>
     </div>
   </section>
+  <footer class="site-footer">
+    <p>Flow Garden ♡ Projet de <strong>Furtuna Denisa</strong> ♡ web14  - 2025</p>
+  </footer>
 </body>
 </html>
