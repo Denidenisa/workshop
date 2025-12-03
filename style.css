@@ -16,6 +16,7 @@
   --grey-charbon:#333333;
   --grey-cl:#666666;
   --btn-active:#FDE68A;
+  --garden:rgb(192, 221, 192);
   
 
   --shadow: 0 4px 12px rgba(0,0,0,0.07);
@@ -23,6 +24,43 @@
   --title-font: 'Roboto', sans-serif;
   --nav-logo-text :"Lobster Two", sans-serif;
 }
+
+body.dark-mode {
+  --main-bg: #0b1020;
+  --accent-bg: #1b2236;
+  --yellow: #F9E79C;
+  --yellow-doré:#E8C27A;
+  --yellow-doré-hover:#AD966C;
+  --yellow-doux:#2d3040;
+  --navbar:#151a2b;
+  --yellow-sable-foncé:#44475a;
+  --light-green:#16352a;
+  --blue: #a0ccff;         
+  --soft-gray: #202538;
+  --card-bg: #1a1f33ee;
+  --grey-charbon:#E5E5E5;
+  --grey-cl:#B0B5C5;
+  --btn-active:#3b4260;
+  --shadow: 0 4px 16px rgba(0,0,0,0.6);
+   --garden:rgb(93, 124, 93);
+}
+ 
+ .theme-toggle {
+  margin-left: 10px;
+  background: none;
+  border: 1px solid var(--blue);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.9em;
+  color: var(--blue);
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: var(--btn-active);
+}
+
+
 
 body {
   background: var(--main-bg);
@@ -486,7 +524,7 @@ h1, h2 {
   margin: 4px 0 0 0;
 }
 #jardin {
-  background-color:rgb(192, 221, 192);;
+  background-color:rgb(192, 221, 192);
 }
 
 #miniRoseContainer .rose-item {
@@ -495,7 +533,7 @@ h1, h2 {
   
 }
 #miniRoseContainer {
-  background-color: rgb(192, 221, 192);
+  background-color:var(--garden);
 }
 @media (max-width: 768px) {
   .timer-mini-panels {
@@ -607,6 +645,8 @@ h1, h2 {
     display: none;          
   }
 }
+
+
 
 
 /* https://dev.to/devcorner/how-to-fetch-api-using-axios-in-javascript-with-code-examples-369c
