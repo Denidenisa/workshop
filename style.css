@@ -41,7 +41,7 @@ body.dark-mode {
   --grey-charbon:#E5E5E5;
   --grey-cl:#B0B5C5;
   --btn-active:#3b4260;
-  --shadow: 0 4px 16px rgba(0,0,0,0.6);
+  --shadow: 0 8px 16px rgba(10, 9, 9, 0.6);
    --garden:rgb(93, 124, 93);
 }
  
@@ -606,8 +606,8 @@ h1, h2 {
 }
 @media (max-width: 768px) {
   .site-explanation {
-    position: absolute;
-    top: 60px;
+    position: relative;
+    top: 15px;
     right: 0;
     background: var(--card-bg);
     flex-direction: column;
@@ -635,7 +635,6 @@ h1, h2 {
 @media (max-width: 768px) {
   .about-me-header {
     top: 60px;
- 
     background: var(--card-bg);
     flex-direction: column;
     align-items: flex-start;
@@ -645,7 +644,11 @@ h1, h2 {
     display: none;          
   }
 }
-
+.contenair-1290{
+    max-width: 1290px;
+    margin: 0 auto;     
+    padding: 0 16px;     
+  }
 
 
 
