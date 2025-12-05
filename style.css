@@ -258,6 +258,7 @@ h1, h2 {
   transition: background 0.18s, color 0.18s;
 }
 
+
 .duration-btn.selected,
 .duration-btn:focus {
   background: var(--yellow-dore);
@@ -338,6 +339,14 @@ h1, h2 {
   justify-content: center;
   gap: 13px;
   margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .timer-controls .btn-important,
+  .timer-controls .btn-reset {
+    font-size: 0.80rem;
+    padding: 4px 8px;
+    min-width: 95px;
+  }
 }
 
 .control-btn {
