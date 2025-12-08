@@ -98,9 +98,8 @@ nav {
 .nav-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  
-  
+
+ 
 }
 
 
@@ -121,6 +120,7 @@ nav {
 .nav-links {
   display: flex;
   gap: 1em;
+
   
 }
 
@@ -134,6 +134,7 @@ nav {
   border-radius: 7px;
   cursor: pointer;
   transition: background 0.18s;
+
 }
 
 .nav-btn.active,
