@@ -92,21 +92,23 @@ body {
 nav {
   background: var(--navbar);
   box-shadow: var(--shadow);
+ 
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 56.25rem;
-  margin: 0 auto;
-  padding: 1.125rem;
+  
+  
 }
+
 
 .logo-img {
   width: 2.5em;
   height: 2.5em;
   margin-right: 0.625rem;
+
 }
 
 .logo-text {
@@ -119,7 +121,9 @@ nav {
 .nav-links {
   display: flex;
   gap: 1em;
+  
 }
+
 
 .nav-btn {
   background: none;
@@ -203,8 +207,6 @@ h1, h2 {
   margin-top: 0.6em;
   margin-bottom: 0.2em;
 }
-
-
 
 .timer-content {
   background: var(--card-bg);
